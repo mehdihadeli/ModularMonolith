@@ -8,6 +8,7 @@ namespace ModularMonolith.Modules.Conferences.Core
 {
     public static class Extensions
     {
+        // mixing three layers on place - (core-application-infrastructure)
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
             services.AddScoped<IConferenceService, ConferenceService>();
