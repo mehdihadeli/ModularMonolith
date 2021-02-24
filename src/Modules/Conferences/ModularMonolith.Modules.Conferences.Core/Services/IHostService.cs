@@ -5,6 +5,7 @@ using ModularMonolith.Modules.Conferences.Core.DTO;
 
 namespace ModularMonolith.Modules.Conferences.Core.Services
 {
+    // this project is simple and we don't use cqrs and ddd
     public interface IHostService
     {
         Task<HostDetailsDto> GetAsync(Guid id);
