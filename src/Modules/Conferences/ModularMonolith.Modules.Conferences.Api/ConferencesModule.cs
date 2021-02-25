@@ -1,9 +1,10 @@
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModularMonolith.Modules.Conferences.Core;
 
-[assembly:InternalsVisibleTo("ModularMonolith.Bootstrapper")]
+[assembly: InternalsVisibleTo("ModularMonolith.Bootstrapper")]
 namespace ModularMonolith.Modules.Conferences.Api
 {
     internal static class ConferencesModule
@@ -11,7 +12,7 @@ namespace ModularMonolith.Modules.Conferences.Api
         public static IServiceCollection AddConferencesModule(this IServiceCollection services)
         {
             services.AddCore();
-            
+
             return services;
         }
 

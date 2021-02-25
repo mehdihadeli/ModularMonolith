@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
+using Microsoft.Extensions.Configuration;
 namespace ModularMonolith.Shared.Infrastructure.Postgres
 {
     public static class Extensions
@@ -15,6 +15,7 @@ namespace ModularMonolith.Shared.Infrastructure.Postgres
 
         public static IServiceCollection AddPostgres<T>(this IServiceCollection services) where T : DbContext
         {
+            //https://stackoverflow.com/questions/56042989/what-are-the-costs-and-possible-side-effects-of-calling-buildserviceprovider-i
             var options = services.GetOptions<PostgresOptions>("postgres");
             services.AddDbContext<T>(x => x.UseNpgsql(options.ConnectionString));
 

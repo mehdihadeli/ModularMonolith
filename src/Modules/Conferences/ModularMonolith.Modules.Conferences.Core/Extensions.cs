@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModularMonolith.Modules.Conferences.Core.DAL;
 using ModularMonolith.Modules.Conferences.Core.DAL.Repositories;

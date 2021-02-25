@@ -43,6 +43,7 @@ namespace ModularMonolith.Shared.Infrastructure
 
         public static T GetOptions<T>(this IServiceCollection services, string sectionName) where T : new()
         {
+            //https://stackoverflow.com/questions/56042989/what-are-the-costs-and-possible-side-effects-of-calling-buildserviceprovider-i
             using var serviceProvider = services.BuildServiceProvider();
             var configuration = serviceProvider.GetRequiredService<IConfiguration>();
             var section = configuration.GetSection(sectionName);
